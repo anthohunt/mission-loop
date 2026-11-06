@@ -19,7 +19,7 @@ git clone https://github.com/anthohunt/mission-loop
 mkdir -p ~/.claude/skills && cp -r mission-loop/skills/mission ~/.claude/skills/
 ```
 
-Requirements: bash ≥ 4 (5.x tested), `awk`, `grep`, `sed`, and [Claude Code](https://docs.claude.com/en/docs/claude-code) logged in (a separate Anthropic product under Anthropic's terms; only called here). Linux and macOS; on Windows use Git Bash (paths are converted with `cygpath` when available).
+Requirements: bash ≥ 4 (5.x tested), `awk`, `grep`, `sed`, and [Claude Code](https://code.claude.com/docs/en/overview) logged in (a separate Anthropic product under Anthropic's terms; only called here). Linux and macOS; on Windows use Git Bash (paths are converted with `cygpath` when available).
 
 ## Use
 
@@ -51,3 +51,7 @@ Renders the prompt of the next turn (worker, or judge if the task is marked read
 ## Licences
 
 Code (`engine/*.sh`, `tests/`): **Apache 2.0** (`LICENSE`, `NOTICE`). Skill text, templates, example and documentation: **CC BY 4.0** (`LICENSE-docs`). Inspired by the [Ralph loop](https://ghuntley.com/ralph/); no code copied. No third-party code is included. Author: Anthony Hunt.
+
+---
+
+**Anthony Hunt** · [Project page on ingevision.cloud](https://ingevision.cloud/?lang=en&p=outils-claude-code) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub profile](https://github.com/anthohunt)
