@@ -1,57 +1,55 @@
-# mission-loop: a goal-driven loop for problems with an unknown path
+**English** · [Français](README.fr.md)
 
-You know **where** you want to go (a clear goal), not **how**. `mission-loop` runs a Claude Code agent loop against a **written success criterion** and stops **only** when an independent judge says it is met (or a human says stop).
+# mission-loop
 
-Three roles, state on disk:
+**A Claude Code loop that keeps working on a goal until an isolated judge confirms, from the files on disk, that the written success criterion is met.**
 
-- a **foreman** (the loop, `engine/mission-loop.sh`) picks the next unfinished task;
-- fresh **workers** (`claude -p`) do one bounded pass, journal what they did and produce proofs;
-- an isolated, adversarial **judge** (`claude -p`, started by the loop, never by the worker) re-checks the proofs on disk and writes `VERDICT: PASS` or `FAIL` with concrete gaps. In doubt, it rejects.
+[![A real mission on the repository's example card: the diagram lights up arrow by arrow next to the real journal and verdicts (click for the full video)](docs/demo.gif)](https://drive.google.com/file/d/1QNLYqGIBqTZMZbCBHXdlqQtiTH245gRL/view)
 
-A mission is a folder (`~/.claude/missions/<slug>/`) holding a *card* (goal, criterion, tasks with required proofs), a journal, per-task state, evidence and verdicts. A new worker is as good as the previous one because the memory is the folder, not a conversation.
+*A real run of the example card in this repository: two tasks, two workers, two judges, 2 min 32 s. [Full video (1:27)](https://drive.google.com/file/d/1QNLYqGIBqTZMZbCBHXdlqQtiTH245gRL/view)*
 
-The skill (`skills/mission/SKILL.md`, in French) is the doctrine an interactive agent follows to write the card with you: the criterion in plain words, validated by you, turned into an executable test; forced reflection after three failures of the same kind; a progress heartbeat; no exit but verified success. This README is in English; the skill, prompts and scripts' messages are in French.
+## Using it
 
-## Install
+- **Write the card.** Goal, success criterion in plain words, tasks with the proofs each one needs. The `mission` skill drafts it with you; you validate it once.
+- **Start the loop.** `mission-loop.sh` hands the next unfinished task to a fresh `claude -p` worker, by default every 20 minutes.
+- **Workers leave proofs.** Each pass writes a journal entry (hypothesis, action, observation) and evidence files, then marks the task ready. A worker never grades itself.
+- **An isolated judge decides.** Started by the script with a fixed adversarial prompt, it re-runs the evidence and writes `VERDICT: PASS` or `FAIL` with gaps. A FAIL sends the gaps to the next worker.
+- **Three ways to stop.** Every task passes, you delete the marker file, or a worker writes `mission-blocked` because it needs you (a secret, a physical action, a subjective call, an outside authorisation).
+
+## Architecture
+
+![mission-loop architecture: you start the engine with a card; the foreman hands a task to a fresh worker, which writes the journal and evidence and marks the task ready; the foreman starts an isolated judge, which re-runs the evidence and writes a verdict; on FAIL the loop goes back to a new worker, on success it notifies you](docs/architecture.en.svg)
+
+*The skill, the prompts, the script messages and the animation are in French.*
+
+## Quick start
 
 ```bash
 git clone https://github.com/anthohunt/mission-loop
 mkdir -p ~/.claude/skills && cp -r mission-loop/skills/mission ~/.claude/skills/
-```
-
-Requirements: bash ≥ 4 (5.x tested), `awk`, `grep`, `sed`, and [Claude Code](https://code.claude.com/docs/en/overview) logged in (a separate Anthropic product under Anthropic's terms; only called here). Linux and macOS; on Windows use Git Bash (paths are converted with `cygpath` when available).
-
-## Use
-
-```bash
 E=~/.claude/skills/mission/engine
-bash $E/mission-new.sh my-mission card.md        # card.md from engine/templates/MISSION-CARD-template.md
-bash $E/mission-loop.sh my-mission               # wakes every 20 minutes by default (second argument: seconds)
+bash $E/mission-new.sh word-count mission-loop/exemples/carte-compteur-de-mots.md
+bash $E/mission-loop.sh --dry-run word-count   # writes the next prompt, calls no model
+bash $E/mission-loop.sh word-count 5           # real run, one pass every 5 seconds
 ```
 
-Settings (environment): `MISSIONS_ROOT` (default `~/.claude/missions`), `MISSION_CLAUDE_BIN`, `MISSION_WORKER_MODEL` (default `sonnet`), `MISSION_JUDGE_MODEL` (default `opus`), `MISSION_PERMISSION_MODE` (default `bypassPermissions`), `MAX_TICKS`, `MISSION_NOTIFY_CMD` (a command called with a message on success or hard block).
+<details><summary>Settings, safety, requirements</summary>
 
-**Safety.** The default permission mode lets agents run commands without asking, which is what an unattended loop needs and also what makes it dangerous. Run it in a container or on a throwaway machine, never with credentials you cannot lose. A worker that needs a human (a secret, a physical action, a subjective call, an external authorisation) writes `mission-blocked` in the mission folder: the loop stops and notifies.
+- **Settings** (environment): `MISSIONS_ROOT` (default `~/.claude/missions`), `MISSION_WORKER_MODEL` (default `sonnet`), `MISSION_JUDGE_MODEL` (default `opus`), `MISSION_PERMISSION_MODE` (default `bypassPermissions`), `MISSION_CLAUDE_BIN`, `MAX_TICKS`, `MISSION_NOTIFY_CMD` (called with a message on success or hard block). New card: `skills/mission/engine/templates/MISSION-CARD-template.md`.
+- **Safety.** In the default permission mode the agents run commands without asking, which an unattended loop needs and which makes it dangerous. Run it in a container or on a throwaway machine, never next to credentials you cannot lose.
+- **Requirements.** bash 4 or later (5.x tested), `awk`, `grep`, `sed`, and [Claude Code](https://code.claude.com/docs/en/overview) logged in. Linux and macOS; on Windows, Git Bash.
+- **Check.** `bash tests/test-installation.sh` checks the install and plays a full loop with a fake `claude`, without any model.
 
-## Dry run (no model call)
+</details>
 
-```bash
-bash $E/mission-loop.sh --dry-run my-mission
-```
+## Status
 
-Renders the prompt of the next turn (worker, or judge if the task is marked ready) into `<mission>/dryrun/`, checks that no `{{placeholder}}` is left empty, and stops without calling a model or changing the mission's state. `bash tests/test-installation.sh` runs a full check, including a complete loop played by a fake `claude`.
-
-## Layout
-
-- `skills/mission/SKILL.md` — the doctrine (French).
-- `skills/mission/engine/` — `mission-new.sh`, `mission-loop.sh`, `templates/` (card, worker prompt, judge prompt).
-- `exemples/carte-compteur-de-mots.md` — a small example card.
-- `tests/test-installation.sh` — installation proof without any model.
-
-## Licences
-
-Code (`engine/*.sh`, `tests/`): **Apache 2.0** (`LICENSE`, `NOTICE`). Skill text, templates, example and documentation: **CC BY 4.0** (`LICENSE-docs`). Inspired by the [Ralph loop](https://ghuntley.com/ralph/); no code copied. No third-party code is included. Author: Anthony Hunt.
+- **Since July 2026.** Written after an overnight agent stopped on its own: the memory moved out of the conversation into the mission folder.
+- **Run on 17 November 2026.** The example card above: both tasks passed at the first verdict, Sonnet workers, Opus judge. The installation test passes.
+- **In use.** The author's longer missions (a HITeC course web page, October 2026) keep the same folder: card, journal, evidence, verdicts.
+- **Not built yet.** One worker at a time, a single judge, no restart after a reboot (run the script under cron or systemd).
+- **Licences.** Code under Apache 2.0 (`LICENSE`, `NOTICE`); skill, templates, example and documentation under CC BY 4.0 (`LICENSE-docs`). Inspired by the [Ralph loop](https://ghuntley.com/ralph/); no code copied.
 
 ---
 
-**Anthony Hunt** · [Project page on ingevision.cloud](https://ingevision.cloud/?lang=en&p=outils-claude-code) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub profile](https://github.com/anthohunt)
+**Anthony Hunt** · [ingevision.cloud](https://ingevision.cloud/?lang=en&p=mission-loop) · [LinkedIn](https://www.linkedin.com/in/anthony-hunt-3948a9196) · [GitHub](https://github.com/anthohunt)

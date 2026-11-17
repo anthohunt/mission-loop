@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 660" width="800" height="660" font-family="IBM Plex Sans, Segoe UI, Helvetica Neue, Arial, sans-serif" role="img" aria-label="Architecture de mission-loop">
+<title>Architecture de mission-loop</title>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#1f4fd1"/></marker><marker id="ay" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e09a00"/></marker></defs>
+<rect width="800" height="660" rx="16" fill="#ffffff"/>
+<rect x="20" y="20" width="760" height="110" rx="14" fill="#e6ebf2" stroke="#c9d1dd" stroke-dasharray="4 4"/>
+<text x="34" y="42" fill="#5d6b82" font-size="12" font-weight="600" letter-spacing=".72">OPÉRATEUR</text>
+<rect x="20" y="190" width="760" height="110" rx="14" fill="#e6ebf2" stroke="#c9d1dd" stroke-dasharray="4 4"/>
+<text x="34" y="212" fill="#5d6b82" font-size="12" font-weight="600" letter-spacing=".72">MOTEUR</text>
+<rect x="20" y="360" width="760" height="110" rx="14" fill="#e6ebf2" stroke="#c9d1dd" stroke-dasharray="4 4"/>
+<text x="766" y="382" text-anchor="end" fill="#5d6b82" font-size="12" font-weight="600" letter-spacing=".72">CLAUDE CODE</text>
+<rect x="20" y="530" width="760" height="110" rx="14" fill="#e6ebf2" stroke="#c9d1dd" stroke-dasharray="4 4"/>
+<text x="34" y="552" fill="#5d6b82" font-size="12" font-weight="600" letter-spacing=".72">CARNET</text>
+<g id="b-vous" class="box"><rect x="300" y="52" width="200" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="312" y="76" fill="#14213d" font-size="13.5" font-weight="600">Vous</text><text x="312" y="96" fill="#5d6b82" font-size="12">skill mission · carte</text></g>
+<g id="b-notif" class="box"><rect x="560" y="52" width="200" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="572" y="76" fill="#14213d" font-size="13.5" font-weight="600">Notification</text><text x="572" y="96" fill="#5d6b82" font-size="12">succès ou blocage dur</text></g>
+<g id="b-contre" class="box"><rect x="300" y="222" width="200" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="312" y="246" fill="#14213d" font-size="13.5" font-weight="600">Contremaître</text><text x="312" y="266" fill="#5d6b82" font-size="12">mission-loop.sh · bash</text></g>
+<g id="note"><rect x="36" y="222" width="230" height="60" rx="10" fill="none" stroke="#93a0b6" stroke-width="1.4" stroke-dasharray="5 4"/><text x="48" y="246" fill="#14213d" font-size="13" font-weight="600">FAIL : retour en 2</text><text x="48" y="266" fill="#5d6b82" font-size="12">les manques vont au journal</text></g>
+<g id="b-trav" class="box"><rect x="36" y="392" width="220" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="48" y="416" fill="#14213d" font-size="13.5" font-weight="600">Travailleur</text><text x="48" y="436" fill="#5d6b82" font-size="12">claude -p · sonnet · neuf</text></g>
+<g id="b-juge" class="box"><rect x="544" y="392" width="220" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="556" y="416" fill="#14213d" font-size="13.5" font-weight="600">Juge</text><text x="556" y="436" fill="#5d6b82" font-size="12">claude -p · opus · isolé</text></g>
+<g id="b-carte" class="box"><rect x="36" y="562" width="164" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="48" y="586" fill="#14213d" font-size="13.5" font-weight="600">Carte · état</text><text x="48" y="606" fill="#5d6b82" font-size="12">critère · tâches</text></g>
+<g id="b-journal" class="box"><rect x="224" y="562" width="164" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="236" y="586" fill="#14213d" font-size="13.5" font-weight="600">Journal</text><text x="236" y="606" fill="#5d6b82" font-size="12">une entrée par passe</text></g>
+<g id="b-preuves" class="box"><rect x="412" y="562" width="164" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="424" y="586" fill="#14213d" font-size="13.5" font-weight="600">Preuves</text><text x="424" y="606" fill="#5d6b82" font-size="12">evidence/T&lt;n&gt;/</text></g>
+<g id="b-verdicts" class="box"><rect x="600" y="562" width="164" height="60" rx="10" fill="#fff" stroke="#1f4fd1" stroke-width="2.2"/><text x="612" y="586" fill="#14213d" font-size="13.5" font-weight="600">Verdicts</text><text x="612" y="606" fill="#5d6b82" font-size="12">PASS ou FAIL + manques</text></g>
+<g id="a1" class="arrow">
+<path class="trace" d="M400 112L400 222" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect x="376.5" y="157" width="47.0" height="18" rx="4" fill="#fff"/><text x="400" y="170" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">lance</text>
+<circle cx="364.5" cy="167" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text x="364.5" y="171" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">1</text>
+</g>
+<g id="a2" class="arrow">
+<path class="trace" d="M340 282L340 330L146 330L146 392" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect x="181.0" y="320" width="124.0" height="18" rx="4" fill="#fff"/><text x="243" y="333" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">assigne la tâche</text>
+<circle cx="169.0" cy="330" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text x="169.0" y="334" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">2</text>
+</g>
+<g id="a3" class="arrow">
+<path class="trace" d="M236 452L236 562M236 500L494 500L494 562" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<path class="tip" d="M236 552L236 562" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect x="341.5" y="490" width="47.0" height="18" rx="4" fill="#fff"/><text x="365" y="503" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">écrit</text>
+<circle cx="329.5" cy="500" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text x="329.5" y="504" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">3</text>
+</g>
+<g id="a4" class="arrow">
+<path class="trace" d="M160 452L160 562" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect x="136.5" y="497" width="47.0" height="18" rx="4" fill="#fff"/><text x="160" y="510" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">prête</text>
+<circle cx="124.5" cy="507" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text x="124.5" y="511" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">4</text>
+</g>
+<g id="a5" class="arrow">
+<path class="trace" d="M460 282L460 330L610 330L610 392" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect x="483.5" y="320" width="103.0" height="18" rx="4" fill="#fff"/><text x="535" y="333" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">lance le juge</text>
+<circle cx="471.5" cy="330" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text x="471.5" y="334" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">5</text>
+</g>
+<g id="a6" class="arrow">
+<path class="trace" d="M560 452L560 562" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect x="519.0" y="497" width="82.0" height="18" rx="4" fill="#fff"/><text x="560" y="510" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">ré-exécute</text>
+<circle cx="507.0" cy="507" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text x="507.0" y="511" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">6</text>
+</g>
+<g id="a7" class="arrow">
+<path class="trace" d="M700 452L700 562" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect x="669.5" y="497" width="61.0" height="18" rx="4" fill="#fff"/><text x="700" y="510" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">verdict</text>
+<circle cx="657.5" cy="507" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text x="657.5" y="511" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">7</text>
+</g>
+<g id="a8" class="arrow">
+<path class="trace" d="M500 252L660 252L660 112" fill="none" stroke="#1f4fd1" stroke-width="2.4" marker-end="url(#a)"/>
+<rect x="629.5" y="172" width="61.0" height="18" rx="4" fill="#fff"/><text x="660" y="185" text-anchor="middle" fill="#1f4fd1" font-size="12" font-weight="600">notifie</text>
+<circle cx="617.5" cy="182" r="9" fill="#fff" stroke="#1f4fd1" stroke-width="1.5"/><text x="617.5" y="186" text-anchor="middle" fill="#1f4fd1" font-size="11" font-weight="700" font-family="IBM Plex Mono, Consolas, monospace">8</text>
+</g>
+</svg>
