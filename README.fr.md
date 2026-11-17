@@ -6,7 +6,13 @@
 
 [![Une vraie mission sur la carte d'exemple du dépôt : le schéma s'allume flèche par flèche à côté du vrai journal et des vrais verdicts (cliquer pour la vidéo complète)](docs/demo.gif)](https://drive.google.com/file/d/1QNLYqGIBqTZMZbCBHXdlqQtiTH245gRL/view)
 
-*Une vraie passe de la carte d'exemple du dépôt : deux tâches, deux travailleurs, deux juges, 2 min 32 s. [Vidéo complète (1:27)](https://drive.google.com/file/d/1QNLYqGIBqTZMZbCBHXdlqQtiTH245gRL/view)*
+<details><summary>Animation en français</summary>
+
+[![Une vraie mission sur la carte d'exemple du dépôt : le schéma s'allume flèche par flèche à côté du vrai journal et des vrais verdicts (cliquer pour la vidéo complète)](docs/demo.fr.gif)](https://drive.google.com/file/d/1K9-vIywi0wmYF9YfVZ9eXQWKEnrj0VwX/view)
+
+</details>
+
+*Une vraie passe de la carte d'exemple du dépôt : deux tâches, deux travailleurs, deux juges, 2 min 32 s. [Vidéo complète (1:27)](https://drive.google.com/file/d/1K9-vIywi0wmYF9YfVZ9eXQWKEnrj0VwX/view)*
 
 ## Utilisation
 
