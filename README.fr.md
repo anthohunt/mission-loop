@@ -20,6 +20,12 @@
 
 ![Architecture de mission-loop : vous lancez le moteur avec une carte ; le contremaître confie une tâche à un travailleur neuf, qui écrit le journal et les preuves et annonce la tâche prête ; le contremaître lance un juge isolé, qui relance les preuves et écrit un verdict ; sur FAIL la boucle repart vers un nouveau travailleur, sur succès elle vous prévient](docs/architecture.svg)
 
+<details><summary>Diagramme en français</summary>
+
+![Architecture de mission-loop : vous lancez le moteur avec une carte ; le contremaître confie une tâche à un travailleur neuf, qui écrit le journal et les preuves et annonce la tâche prête ; le contremaître lance un juge isolé, qui relance les preuves et écrit un verdict ; sur FAIL la boucle repart vers un nouveau travailleur, sur succès elle vous prévient](docs/architecture.fr.svg)
+
+</details>
+
 ## Démarrage
 
 Les agents lancent des commandes sans demander (mode `bypassPermissions` par défaut) : un conteneur ou une machine jetable, jamais à côté d'identifiants qu'on ne peut pas perdre.

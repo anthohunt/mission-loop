@@ -18,7 +18,13 @@
 
 ## Architecture
 
-![mission-loop architecture: you start the engine with a card; the foreman hands a task to a fresh worker, which writes the journal and evidence and marks the task ready; the foreman starts an isolated judge, which re-runs the evidence and writes a verdict; on FAIL the loop goes back to a new worker, on success it notifies you](docs/architecture.en.svg)
+![mission-loop architecture: you start the engine with a card; the foreman hands a task to a fresh worker, which writes the journal and evidence and marks the task ready; the foreman starts an isolated judge, which re-runs the evidence and writes a verdict; on FAIL the loop goes back to a new worker, on success it notifies you](docs/architecture.svg)
+
+<details><summary>French version</summary>
+
+![Architecture de mission-loop : vous lancez le moteur avec une carte ; le contremaître confie une tâche à un travailleur neuf, qui écrit le journal et les preuves et annonce la tâche prête ; le contremaître lance un juge isolé, qui relance les preuves et écrit un verdict ; sur FAIL la boucle repart vers un nouveau travailleur, sur succès elle vous prévient](docs/architecture.fr.svg)
+
+</details>
 
 ## Quick start
 
