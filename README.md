@@ -4,15 +4,15 @@
 
 **A Claude Code loop that keeps working on a goal until an isolated judge confirms, from the files on disk, that the written success criterion is met.**
 
-[![A real mission on the repository's example card: the diagram lights up arrow by arrow next to the real journal and verdicts (click for the full video)](docs/demo.gif)](https://drive.google.com/file/d/1QNLYqGIBqTZMZbCBHXdlqQtiTH245gRL/view)
+![A real mission on the repository's example card: the diagram lights up arrow by arrow next to the real journal and verdicts](docs/demo.gif)
 
 <details><summary>French version</summary>
 
-[![Une vraie mission sur la carte d'exemple du dépôt : le schéma s'allume flèche par flèche à côté du vrai journal et des vrais verdicts (cliquer pour la vidéo complète)](docs/demo.fr.gif)](https://drive.google.com/file/d/1K9-vIywi0wmYF9YfVZ9eXQWKEnrj0VwX/view)
+![Une vraie mission sur la carte d'exemple du dépôt : le schéma s'allume flèche par flèche à côté du vrai journal et des vrais verdicts](docs/demo.fr.gif)
 
 </details>
 
-*A real run of the example card in this repository: two tasks, two workers, two judges, 2 min 32 s. [Full video (1:27)](https://drive.google.com/file/d/1QNLYqGIBqTZMZbCBHXdlqQtiTH245gRL/view)*
+*A real run of the example card in this repository: two tasks, two workers, two judges, 2 min 32 s.*
 
 ## Using it
 

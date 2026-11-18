@@ -4,15 +4,15 @@
 
 **Une boucle Claude Code qui travaille sur un but jusqu'à ce qu'un juge isolé confirme, sur les fichiers du disque, que le critère de succès écrit est atteint.**
 
-[![Une vraie mission sur la carte d'exemple du dépôt : le schéma s'allume flèche par flèche à côté du vrai journal et des vrais verdicts (cliquer pour la vidéo complète)](docs/demo.gif)](https://drive.google.com/file/d/1QNLYqGIBqTZMZbCBHXdlqQtiTH245gRL/view)
+![Une vraie mission sur la carte d'exemple du dépôt : le schéma s'allume flèche par flèche à côté du vrai journal et des vrais verdicts](docs/demo.gif)
 
 <details><summary>Version française</summary>
 
-[![Une vraie mission sur la carte d'exemple du dépôt : le schéma s'allume flèche par flèche à côté du vrai journal et des vrais verdicts (cliquer pour la vidéo complète)](docs/demo.fr.gif)](https://drive.google.com/file/d/1K9-vIywi0wmYF9YfVZ9eXQWKEnrj0VwX/view)
+![Une vraie mission sur la carte d'exemple du dépôt : le schéma s'allume flèche par flèche à côté du vrai journal et des vrais verdicts](docs/demo.fr.gif)
 
 </details>
 
-*Une vraie passe de la carte d'exemple du dépôt : deux tâches, deux travailleurs, deux juges, 2 min 32 s. [Vidéo complète (1:27)](https://drive.google.com/file/d/1K9-vIywi0wmYF9YfVZ9eXQWKEnrj0VwX/view)*
+*Une vraie passe de la carte d'exemple du dépôt : deux tâches, deux travailleurs, deux juges, 2 min 32 s.*
 
 ## Utilisation
 
